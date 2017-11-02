@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1509650372">
+  <File Type="PA-TCL" Name="displayAdder.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="displayAdder_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="displayAdder_reports.tcl"/>
+  <File Type="RDS-RDS" Name="displayAdder.vds"/>
+  <File Type="RDS-UTIL" Name="displayAdder_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="display_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="displayAdder.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="displayAdder_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="displayAdder_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/Verilog Code/dassign1_1.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../EEM16/HW2/Verilog Code/dassign1_1.v"/>
+        <Attr Name="ImportTime" Val="1509251039"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Verilog Code/dassign1_2.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../EEM16/HW2/Verilog Code/dassign1_2.v"/>
+        <Attr Name="ImportTime" Val="1509251040"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Verilog Code/dassign1_3.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../EEM16/HW2/Verilog Code/dassign1_3.v"/>
+        <Attr Name="ImportTime" Val="1509251040"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Verilog Code/testbench.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../EEM16/HW2/Verilog Code/testbench.sv"/>
+        <Attr Name="ImportTime" Val="1509251040"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Verilog Code/design.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../EEM16/HW2/Verilog Code/design.sv"/>
+        <Attr Name="ImportTime" Val="1509251040"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="displayAdder"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/letterDisplay.xdc">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../EE89-Poj1/willWork/willWork.srcs/constrs_1/new/letterDisplay.xdc"/>
+        <Attr Name="ImportTime" Val="1509648920"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/new/numberDisplay.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../EE89-Poj1/willWork/willWork.srcs/constrs_1/new/numberDisplay.xdc"/>
+        <Attr Name="ImportTime" Val="1509650361"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>
