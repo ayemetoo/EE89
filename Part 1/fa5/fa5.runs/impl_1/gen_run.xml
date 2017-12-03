@@ -1,65 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1509650420">
-  <File Type="PWROPT-DCP" Name="displayAdder_pwropt.dcp"/>
   <File Type="ROUTE-PWR" Name="displayAdder_power_routed.rpt"/>
   <File Type="PA-TCL" Name="displayAdder.tcl"/>
+  <File Type="PWROPT-DCP" Name="displayAdder_pwropt.dcp"/>
   <File Type="ROUTE-PWR-SUM" Name="display_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="displayAdder_reports.tcl"/>
   <File Type="BG-DRC" Name="displayAdder.drc"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="displayAdder_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="displayAdder_timing_summary_init.rpt"/>
   <File Type="OPT-HWDEF" Name="displayAdder.hwdef"/>
   <File Type="OPT-DCP" Name="displayAdder_opt.dcp"/>
   <File Type="OPT-DRC" Name="displayAdder_drc_opted.rpt"/>
-  <File Type="OPT-TIMING" Name="displayAdder_timing_summary_opted.rpt"/>
-  <File Type="PWROPT-DRC" Name="displayAdder_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="displayAdder_timing_summary_pwropted.rpt"/>
   <File Type="PLACE-DCP" Name="displayAdder_placed.dcp"/>
   <File Type="PLACE-IO" Name="displayAdder_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="displayAdder_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="displayAdder_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="display_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="displayAdder_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="displayAdder_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="displayAdder_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="displayAdder_timing_summary_placed.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="displayAdder_postplace_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="displayAdder_timing_summary_postplace_pwropted.rpt"/>
   <File Type="PHYSOPT-DCP" Name="displayAdder_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="displayAdder_drc_physopted.rpt"/>
   <File Type="BG-BIT" Name="displayAdder.bit"/>
-  <File Type="PHYSOPT-TIMING" Name="displayAdder_timing_summary_physopted.rpt"/>
   <File Type="ROUTE-ERROR-DCP" Name="displayAdder_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="displayAdder_routed.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="displayAdder_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="displayAdder_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="display_drc_routed.pb"/>
-  <File Type="BITSTR-MSK" Name="displayAdder.msk"/>
   <File Type="ROUTE-DRC-RPX" Name="display_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="displayAdder.bgn"/>
+  <File Type="BITSTR-MSK" Name="displayAdder.msk"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="displayAdder_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-RBT" Name="displayAdder.rbt"/>
+  <File Type="BG-BGN" Name="displayAdder.bgn"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="display_methodology_drc_routed.rpx"/>
-  <File Type="BG-BIN" Name="displayAdder.bin"/>
+  <File Type="BITSTR-RBT" Name="displayAdder.rbt"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="display_methodology_drc_routed.pb"/>
+  <File Type="BG-BIN" Name="displayAdder.bin"/>
   <File Type="ROUTE-PWR-RPX" Name="display_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="displayAdder_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="display_route_status.pb"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="displayAdder_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="displayAdder_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="display_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="displayAdder_incremental_reuse_routed.rpt"/>
-  <File Type="RDI-RDI" Name="displayAdder.vdi"/>
   <File Type="ROUTE-CLK" Name="displayAdder_clock_utilization_routed.rpt"/>
+  <File Type="RDI-RDI" Name="displayAdder.vdi"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="displayAdder_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="displayAdder_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="displayAdder_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="displayAdder_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="displayAdder_timing_summary_postroute_physopted.rpx"/>
   <File Type="BITSTR-NKY" Name="displayAdder.nky"/>
   <File Type="BITSTR-BMM" Name="displayAdder_bd.bmm"/>
   <File Type="BITSTR-MMI" Name="displayAdder.mmi"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="displayAdder.ltx"/>
   <File Type="BITSTR-SYSDEF" Name="displayAdder.sysdef"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
