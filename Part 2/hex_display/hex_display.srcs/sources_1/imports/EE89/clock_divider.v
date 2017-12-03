@@ -36,12 +36,14 @@ module clk_div (clk, rst, new_clk);
 endmodule
 
 module display_clk(clk,rst,clk_led);
+    
+	parameter half_period = 16666667;
     input clk;
     input rst;
     output clk_led;
     
     wire new_clk;
-    clk_div clk_div(clk,rst,new_clk);
+    clk_div #(half_period) clk_div(clk,rst,new_clk);
     assign clk_led = new_clk;
     
 endmodule

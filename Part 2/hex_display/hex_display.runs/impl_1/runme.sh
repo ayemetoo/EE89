@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/tuamy/Documents/GitHub/EE89-Poj1/project_2/project_2.runs/impl_1'
+HD_PWD='C:/Users/tuamy/Documents/GitHub/EE89/Part 2/hex_display/hex_display.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .write_bitstream.begin.rst
-EAStep vivado -log display_clk.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source display_clk.tcl -notrace
+EAStep vivado -log display_values.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source display_values.tcl -notrace
 
 

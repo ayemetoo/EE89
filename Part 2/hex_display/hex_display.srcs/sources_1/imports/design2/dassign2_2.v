@@ -187,18 +187,98 @@ module deserializer(clk, in, out3, out2, out1, out0, done);
 endmodule
 
 /*EE 89*/
-module display_values(clk, in, cmd, bin3, bin2, bin1, bin0);
+//Clocking
+/* The meaty bit */
+
+//displaying
+module display_values(clk, rst, in, cmd, refresh, shift_clk, cur_digit, seg);
     input clk;
     input [7:0] in; //set via switches (left)
+    input rst; //set via switches, left right
     input [`CMD_WIDTH-1:0] cmd; //set commands via switches (right)
-  	output [3:0] bin3, bin2, bin1, bin0;
+    output refresh, shift_clk;
+  	output [3:0] cur_digit; reg [3:0] cur_digit;
+  	output [6:0] seg; reg [6:0] seg;
   	
   	//shifting
   	wire [7:0] out3, out2, out1, out0;
-  	shift4 #(8) shift4(clk, in, cmd, out3, out2, out1, out0);
+  	reg [3:0] bin3, bin2, bin1, bin0;
+  	
+    display_clk shifty_clk(clk,rst,shift_clk);
+  	shift4 #(8) shift4(shift_clk, in, cmd, out3, out2, out1, out0);
   	//getting lower 4 bits
-  	assign bin3 = out3[3:0];
-  	assign bin2 = out2[3:0];
-  	assign bin1 = out1[3:0];
-  	assign bin0 = out0[3:0];
+  	//get update from shift every 0.33s
+  	always @ (posedge(shift_clk), posedge(rst))
+  	begin
+  	    bin3 <= rst ? 0 : out3[3:0];
+        bin2 <= rst ? 0 : out2[3:0];
+        bin1 <= rst ? 0 : out1[3:0];
+        bin0 <= rst ? 0 : out0[3:0];
+  	end
+  	//refresh digit every 1ms --> clock with 500000 half_period
+  	reg [1:0] refresh_counter;
+  	display_clk #(300000) display_clk(clk,rst,refresh);
+  	always @ (posedge(refresh), posedge(rst))
+  	begin
+  	 if (rst==1)
+  	     refresh_counter <= 0;
+  	 else if (refresh_counter < 3)
+  	     refresh_counter <= refresh_counter + 1;
+  	else 
+  	 refresh_counter = refresh_counter + 1;
+  	end
+  	
+  	//choose current digit
+  	reg [3:0] cur_value;
+  	always @(*)
+  	begin
+  	 case(refresh_counter)
+  	 2'b00: begin //leftmost
+  	     cur_digit <= 4'b0111;
+  	     cur_value <= bin3;
+  	     end
+  	 2'b01: begin
+  	     cur_digit <= 4'b1011;
+         cur_value <= bin2;
+         end
+     2'b10: begin
+        cur_digit <= 4'b1101;
+        cur_value <= bin1;
+        end
+     2'b11: begin //rightmost
+        cur_digit <= 4'b1110;
+        cur_value <= bin0;
+        end
+     default: begin
+        cur_digit <= 4'b0000;
+        cur_value <= 4'b0000;
+        end
+  	endcase
+  	end
+  	
+  	//display
+  	always @(*)
+          begin
+              case(cur_value)
+              4'b0000: seg  = 7'b0000001; // "0"     
+              4'b0001: seg  = 7'b1001111; // "1" 
+              4'b0010: seg  = 7'b0010010; // "2" 
+              4'b0011: seg  = 7'b0000110; // "3" 
+              4'b0100: seg  = 7'b1001100; // "4" 
+              4'b0101: seg  = 7'b0100100; // "5" 
+              4'b0110: seg  = 7'b0100000; // "6" 
+              4'b0111: seg  = 7'b0001111; // "7" 
+              4'b1000: seg  = 7'b0000000; // "8"     
+              4'b1001: seg  = 7'b0000100; // "9" 
+              4'b1010: seg  = 7'b0001000; // "A" 
+              4'b1011: seg  = 7'b1100000; // "B"     
+              4'b1100: seg  = 7'b1110010; // "C" 
+              4'b1101: seg  = 7'b1000010; // "D" 
+              4'b1110: seg  = 7'b0110000; // "E"     
+              4'b1111: seg  = 7'b0111000; // "F" 
+              default: seg  = 7'b0000001; // "0"
+              
+              endcase
+          end
+  	
 endmodule

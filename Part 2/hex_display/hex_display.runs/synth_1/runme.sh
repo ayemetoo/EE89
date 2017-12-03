@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/tuamy/Documents/GitHub/EE89-Poj1/project_2/project_2.runs/synth_1'
+HD_PWD='C:/Users/tuamy/Documents/GitHub/EE89/Part 2/hex_display/hex_display.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log display_clk.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source display_clk.tcl
+EAStep vivado -log display_values.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source display_values.tcl
