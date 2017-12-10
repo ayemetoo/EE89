@@ -61,12 +61,97 @@ proc step_failed { step } {
 }
 
 
+start_step init_design
+set ACTIVE_STEP init_design
+set rc [catch {
+  create_msg_db init_design.pb
+  set_param xicom.use_bs_reader 1
+  create_project -in_memory -part xc7a35tcpg236-1
+  set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
+  set_property design_mode GateLvl [current_fileset]
+  set_param project.singleFileAddWarning.threshold 0
+  set_property webtalk.parent_dir {C:/Users/tuamy/Documents/GitHub/EE89/Part 2/clk_divider/clk_divider.cache/wt} [current_project]
+  set_property parent.project_path {C:/Users/tuamy/Documents/GitHub/EE89/Part 2/clk_divider/clk_divider.xpr} [current_project]
+  set_property ip_output_repo {{C:/Users/tuamy/Documents/GitHub/EE89/Part 2/project_2/project_2.cache/ip}} [current_project]
+  set_property ip_cache_permissions {read write} [current_project]
+  add_files -quiet {{C:/Users/tuamy/Documents/GitHub/EE89/Part 2/clk_divider/clk_divider.runs/synth_1/display_clk.dcp}}
+  read_xdc {{C:/Users/tuamy/Documents/GitHub/EE89/Part 2/clk_divider/clk_divider.srcs/constrs_1/imports/basys3_master/Basys3_Master.xdc}}
+  link_design -top display_clk -part xc7a35tcpg236-1
+  close_msg_db -file init_design.pb
+} RESULT]
+if {$rc} {
+  step_failed init_design
+  return -code error $RESULT
+} else {
+  end_step init_design
+  unset ACTIVE_STEP 
+}
+
+start_step opt_design
+set ACTIVE_STEP opt_design
+set rc [catch {
+  create_msg_db opt_design.pb
+  opt_design 
+  write_checkpoint -force display_clk_opt.dcp
+  create_report "impl_1_opt_report_drc_0" "report_drc -file display_clk_drc_opted.rpt -pb display_clk_drc_opted.pb -rpx display_clk_drc_opted.rpx"
+  close_msg_db -file opt_design.pb
+} RESULT]
+if {$rc} {
+  step_failed opt_design
+  return -code error $RESULT
+} else {
+  end_step opt_design
+  unset ACTIVE_STEP 
+}
+
+start_step place_design
+set ACTIVE_STEP place_design
+set rc [catch {
+  create_msg_db place_design.pb
+  implement_debug_core 
+  place_design 
+  write_checkpoint -force display_clk_placed.dcp
+  create_report "impl_1_place_report_io_0" "report_io -file display_clk_io_placed.rpt"
+  create_report "impl_1_place_report_utilization_0" "report_utilization -file display_clk_utilization_placed.rpt -pb display_clk_utilization_placed.pb"
+  create_report "impl_1_place_report_control_sets_0" "report_control_sets -file display_clk_control_sets_placed.rpt"
+  close_msg_db -file place_design.pb
+} RESULT]
+if {$rc} {
+  step_failed place_design
+  return -code error $RESULT
+} else {
+  end_step place_design
+  unset ACTIVE_STEP 
+}
+
+start_step route_design
+set ACTIVE_STEP route_design
+set rc [catch {
+  create_msg_db route_design.pb
+  route_design 
+  write_checkpoint -force display_clk_routed.dcp
+  create_report "impl_1_route_report_drc_0" "report_drc -file display_clk_drc_routed.rpt -pb display_clk_drc_routed.pb -rpx display_clk_drc_routed.rpx"
+  create_report "impl_1_route_report_methodology_0" "report_methodology -file display_clk_methodology_drc_routed.rpt -pb display_clk_methodology_drc_routed.pb -rpx display_clk_methodology_drc_routed.rpx"
+  create_report "impl_1_route_report_power_0" "report_power -file display_clk_power_routed.rpt -pb display_clk_power_summary_routed.pb -rpx display_clk_power_routed.rpx"
+  create_report "impl_1_route_report_route_status_0" "report_route_status -file display_clk_route_status.rpt -pb display_clk_route_status.pb"
+  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -file display_clk_timing_summary_routed.rpt -warn_on_violation  -rpx display_clk_timing_summary_routed.rpx"
+  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file display_clk_incremental_reuse_routed.rpt"
+  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file display_clk_clock_utilization_routed.rpt"
+  close_msg_db -file route_design.pb
+} RESULT]
+if {$rc} {
+  write_checkpoint -force display_clk_routed_error.dcp
+  step_failed route_design
+  return -code error $RESULT
+} else {
+  end_step route_design
+  unset ACTIVE_STEP 
+}
+
 start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  open_checkpoint display_clk_routed.dcp
-  set_property webtalk.parent_dir C:/Users/tuamy/Documents/GitHub/EE89-Poj1/project_2/project_2.cache/wt [current_project]
   catch { write_mem_info -force display_clk.mmi }
   write_bitstream -force display_clk.bit -bin_file
   catch {write_debug_probes -quiet -force display_clk}

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1512284832">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1512771195">
   <File Type="PA-TCL" Name="display_clk.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="display_clk_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="display_clk_reports.tcl"/>
@@ -13,7 +13,7 @@
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/EE89/clock_divider.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../UCLA 2/M16/EE89/clock_divider.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../UCLA 2/M16/EE89/clock_divider.v"/>
         <Attr Name="ImportTime" Val="1512283437"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -30,7 +30,7 @@
     <Filter Type="Constrs"/>
     <File Path="$PSRCDIR/constrs_1/imports/basys3_master/Basys3_Master.xdc">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/basys3_master/Basys3_Master.xdc"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../Downloads/basys3_master/Basys3_Master.xdc"/>
         <Attr Name="ImportTime" Val="1512283558"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -41,9 +41,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

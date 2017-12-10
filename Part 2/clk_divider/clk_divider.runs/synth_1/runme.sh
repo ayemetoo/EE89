@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/tuamy/Documents/GitHub/EE89-Poj1/project_2/project_2.runs/synth_1'
+HD_PWD='C:/Users/tuamy/Documents/GitHub/EE89/Part 2/clk_divider/clk_divider.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

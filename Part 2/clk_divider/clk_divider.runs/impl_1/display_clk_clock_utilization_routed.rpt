@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date         : Sat Dec  2 23:09:13 2017
+| Date         : Fri Dec  8 14:16:07 2017
 | Host         : DESKTOP-A1JJ7FI running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file display_clk_clock_utilization_routed.rpt
 | Design       : display_clk

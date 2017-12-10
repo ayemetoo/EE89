@@ -55,10 +55,36 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/imports/design3/building_blocks.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../UCLA 2/M16/design3/building_blocks.v"/>
+          <Attr Name="ImportTime" Val="1512366336"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/EE89/clock_divider.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../UCLA 2/M16/EE89/clock_divider.v"/>
           <Attr Name="ImportTime" Val="1512283437"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/design3/constants3.vh">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../UCLA 2/M16/design3/constants3.vh"/>
+          <Attr Name="ImportTime" Val="1512366336"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/design3/lab_modules.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../UCLA 2/M16/design3/lab_modules.v"/>
+          <Attr Name="ImportTime" Val="1512713926"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -76,6 +102,16 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../UCLA 2/M16/design2/dassign2_2.v"/>
           <Attr Name="ImportTime" Val="1511387937"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/design3/dassign3_3.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../UCLA 2/M16/design3/dassign3_3.v"/>
+          <Attr Name="ImportTime" Val="1512706573"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>

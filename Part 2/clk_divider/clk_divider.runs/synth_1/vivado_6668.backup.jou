@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Sat Dec  2 23:07:13 2017
+# Process ID: 6668
+# Current directory: C:/Users/tuamy/Documents/GitHub/EE89-Poj1/project_2/project_2.runs/synth_1
+# Command line: vivado.exe -log display_clk.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source display_clk.tcl
+# Log file: C:/Users/tuamy/Documents/GitHub/EE89-Poj1/project_2/project_2.runs/synth_1/display_clk.vds
+# Journal file: C:/Users/tuamy/Documents/GitHub/EE89-Poj1/project_2/project_2.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source display_clk.tcl -notrace
