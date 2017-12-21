@@ -65,7 +65,6 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_param xicom.use_bs_reader 1
   open_checkpoint display_decoder_routed.dcp
   set_property webtalk.parent_dir {C:/Users/tuamy/Documents/GitHub/EE89/Part 2/ShiftingMorse/ShiftingMorse.cache/wt} [current_project]
   catch { write_mem_info -force display_decoder.mmi }

@@ -168,20 +168,19 @@ endmodule
 
 
 //displaying
-module display_decoder (clk, in, real_clk,, cur_digit, letter, cur_value, display, done);
+module display_decoder (clk, in, real_clk, cur_digit, letter, cur_value, display, done);
     input clk;
-    input in; //set via button (left)
+    input in; //set via button (middle)
     output real_clk;
     output done;
     output [3:0] cur_digit; reg [3:0] cur_digit;
   	output [4:0] letter;
-  	output [6:0] cur_value, display;
+  	output [6:0] cur_value; reg [6:0] cur_value;
+  	output [6:0] display;
   	
   	//deserializer
   	wire rst;
     display_clk shifty_clk(clk,rst,real_clk);
-    wire [4:0] letter;
-    wire [6:0] display;
   	decoder decoder(real_clk,in,letter,display,done);
   	
   	//refresh rate
@@ -207,9 +206,7 @@ module display_decoder (clk, in, real_clk,, cur_digit, letter, cur_value, displa
  
     //choose current digit
     wire [6:0] out3, out2, out1, out0;
-    reg [6:0] cur_value;
     new_shift4 #(7) shift_display(real_clk, seg, shift, out3, out2, out1, out0);
-    
     always @(*)
     begin
         case(refresh_counter)
